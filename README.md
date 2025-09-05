@@ -1,0 +1,1 @@
+# Daiza2025.github.io
