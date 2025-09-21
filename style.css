@@ -209,3 +209,45 @@ nav a {
 nav a:hover {
     color: #e53935; /* ホバー時の色 */
 }
+
+header {
+    display: flex; /* ロゴとメニューを横並びにする */
+    justify-content: space-between; /* ロゴとメニューを両端に配置 */
+    align-items: center; /* 垂直方向の中央に揃える */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo img {
+    max-width: 250px; /* ロゴの最大幅を調整 */
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* メニュー項目を横並びにする */
+}
+
+nav li {
+    margin-left: 20px; /* 各メニュー項目の間に余白を追加 */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e53935;
+}
