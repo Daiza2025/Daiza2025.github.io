@@ -140,3 +140,27 @@ nav a {
     color: #555;
     font-weight: bold;
 }
+
+header {
+    display: flex; /* ヘッダー内の要素を横並びに配置 */
+    justify-content: space-between; /* 要素を両端に寄せる */
+    align-items: center; /* 要素を垂直方向の中央に揃える */
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none; /* リストの点（・）を消す */
+    margin: 0;
+    padding: 0;
+    display: flex; /* メニュー項目を横並びにする */
+}
+
+nav li {
+    margin: 0 15px; /* メニュー項目の間に余白を作る */
+}
+
+nav a {
+    text-decoration: none; /* 下線を消す */
+    color: #333;
+    font-weight: bold;
+}
