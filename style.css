@@ -262,17 +262,17 @@ nav a:hover {
 }
 /* ドロップダウンメニューのスタイル */
 nav li {
-    position: relative;
+    position: relative; /* 子要素（ドロップダウンメニュー）の基準位置に設定 */
 }
 
 .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
+    display: none;      /* 普段は非表示 */
+    position: absolute; /* 親要素に対して絶対位置で配置 */
+    top: 100%;          /* 親要素の真下に配置 */
     left: 0;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
+    z-index: 1000;      /* 他の要素の上に表示されるようにする */
     list-style: none;
     padding: 10px 0;
     min-width: 200px;
@@ -288,6 +288,7 @@ nav li {
     white-space: nowrap;
 }
 
+/* マウスを合わせたときにドロップダウンメニューを表示 */
 nav li:hover .dropdown {
     display: block;
 }
