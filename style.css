@@ -339,3 +339,21 @@ nav li:hover .dropdown {
         margin: 15px 0;
     }
 }
+
+/* ====================
+    ボタン
+   ==================== */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #e50914; /* お好みの色に変更可能 */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #b80711; /* ホバー時の色 */
+}
