@@ -346,7 +346,7 @@ nav li:hover .dropdown {
 .button {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #e50914; /* お好みの色に変更可能 */
+    background-color: #007BFF; /* お好みの色に変更可能 */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -355,5 +355,5 @@ nav li:hover .dropdown {
 }
 
 .button:hover {
-    background-color: #b80711; /* ホバー時の色 */
+    background-color: #0056b3; /* ホバー時の色 */
 }
