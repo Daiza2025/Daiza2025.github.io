@@ -367,7 +367,7 @@ nav li:hover .dropdown {
     ヒーローセクション
    ==================== */
 .hero {
-    background-image: url('hero-image-japan.jpg'); /* 正しいファイルパス */
+    background-image: url('0001 Top.jpg'); /* 正しいファイルパス */
     background-size: cover;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5);
