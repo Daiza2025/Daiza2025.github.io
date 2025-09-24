@@ -367,10 +367,10 @@ nav li:hover .dropdown {
     ヒーローセクション
    ==================== */
 .hero {
-    background-image: url('001 Top.jpg'); /* ここにヒーロー画像のURLを貼り付けます */
+    background-image: url('hero-image-japan.jpg'); /* 正しいファイルパス */
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.5); /* 画像が読み込まれない場合の代替色と、テキストの可読性を上げるためのオーバーレイ */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
     padding: 100px 20px;
