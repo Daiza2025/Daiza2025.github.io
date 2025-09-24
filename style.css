@@ -367,7 +367,7 @@ nav li:hover .dropdown {
     ヒーローセクション
    ==================== */
 .hero {
-    background-image: url('C:\Users\User\OneDrive\MarketingNippon.com\CMS\daiza2025.github.io\0001 Top.jpg'); /* ここにヒーロー画像のURLを貼り付けます */
+    background-image: url('001 Top.jpg'); /* ここにヒーロー画像のURLを貼り付けます */
     background-size: cover;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5); /* 画像が読み込まれない場合の代替色と、テキストの可読性を上げるためのオーバーレイ */
