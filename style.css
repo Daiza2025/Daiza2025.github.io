@@ -302,17 +302,34 @@ nav li:hover .dropdown {
     レスポンシブデザイン
    ==================== */
 @media (max-width: 768px) {
+
     header {
-        flex-direction: column;
+        flex-direction: row; /* 横並びに戻す */
+        justify-content: space-between; /* 両端揃え */
         align-items: center;
-        text-align: center;
+        text-align: left;
+    }
+
+    .menu-toggle {
+        display: block; /* ハンバーガーメニューを表示 */
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        position: absolute;
+        top: 60px; /* ヘッダーの高さに応じて調整 */
+        left: 0;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none; /* デフォルトでは非表示 */
     }
+
+    nav.active ul {
+        display: flex; /* activeクラスがついたときに表示 */
+    }
+}
 
     nav li a,
     .dropdown li a {
@@ -568,4 +585,38 @@ nav li:hover .dropdown {
     .service-preview h3 {
         font-size: 1.5rem;
     }
+}
+
+/* ====================
+    ハンバーガーメニュー
+   ==================== */
+.menu-toggle {
+    display: none; /* デフォルトでは非表示 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100; /* 他の要素の上に表示 */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #212529; /* 濃いグレー */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* メニューが開いたときのアイコンのスタイル */
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
