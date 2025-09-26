@@ -474,3 +474,51 @@ nav li:hover .dropdown {
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
+
+
+
+/* ====================
+    トップページサービスプレビュー
+   ==================== */
+.service-preview {
+    margin-bottom: 20px;
+}
+
+.service-preview a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-preview a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-preview h3 {
+    color: #212529; /* 濃いグレー */
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.service-preview p {
+    color: #6c757d; /* 落ち着いたグレー */
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .service-preview a {
+        padding: 15px;
+    }
+
+    .service-preview h3 {
+        font-size: 1.5rem;
+    }
+}
