@@ -364,8 +364,55 @@ footer {
 }
 
 /* ====================
-    レスポンシブデザイン
+    ブログリストのデザイン
    ==================== */
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.blog-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.blog-item a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.blog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog-item h3 {
+    text-align: left;
+    color: #212529; /* プロフェッショナルな色に統一 */
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.blog-item p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.blog-item .post-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: row;
@@ -432,5 +479,8 @@ footer {
 
     footer .footer-item {
         margin-bottom: 20px;
+    }
+    .blog-item {
+        max-width: 100%;
     }
 }
