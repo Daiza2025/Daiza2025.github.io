@@ -484,3 +484,21 @@ footer {
         max-width: 100%;
     }
 }
+/* ====================
+    画像表示用スタイル
+   ==================== */
+.image-full-width {
+    width: 100%;
+    margin-top: 40px; /* 上部に余白を追加 */
+    margin-bottom: 40px; /* 下部に余白を追加 */
+}
+
+.image-full-width img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* 角を少し丸くする */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 軽い影で立体感を出す */
+    margin-left: auto;
+    margin-right: auto;
+}
