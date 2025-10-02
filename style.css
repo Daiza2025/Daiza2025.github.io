@@ -23,7 +23,7 @@ h2 {
     font-size: 24px;
     margin-top: 40px;
     margin-bottom: 20px;
-    color: #212529; /* タイトルを落ち着いた色に変更 */
+    color: #212529;
 }
 
 h3 {
@@ -116,7 +116,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #e4e6ec;
+    color: #343a40;
 }
 
 .dropdown {
@@ -140,6 +140,11 @@ nav a:hover {
     display: block;
     padding: 10px 15px;
     white-space: nowrap;
+    color: #212529;
+}
+
+.dropdown a:hover {
+    background-color: #f8f9fa;
 }
 
 nav li:hover .dropdown {
@@ -397,7 +402,7 @@ footer {
 
 .blog-item h3 {
     text-align: left;
-    color: #212529; /* プロフェッショナルな色に統一 */
+    color: #212529;
     font-size: 1.5rem;
     margin-top: 0;
 }
@@ -413,7 +418,57 @@ footer {
     margin-bottom: 10px;
 }
 
+/* ====================
+    画像用共通スタイル
+   ==================== */
+.service-image {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* ====================
+    SNSロゴ用スタイル (media.html)
+    - ロゴ画像が表示されず、テキストが下に回り込んでしまう問題を解決
+   ==================== */
+.item-logo {
+    display: block;
+    margin: 0 auto 10px auto; /* 20pxから10pxに調整し、ロゴ直下の余白を減らす */
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    /* ロゴが画像ファイルであることを前提とする */
+}
+
+/* HTML側でロゴ画像を囲む<div>や<p>内のテキストを非表示にする（最も直接的な解決策）
+   HTMLでロゴ画像を囲んでいる要素に、ロゴ画像以外のテキストが含まれている場合、
+   そのテキストが表示されてしまうため、ここではCSSでロゴ画像以外を隠すことはできません。
+   ただし、HTML構造が以下のような場合：
+   <div class="item-logo">
+       <img src="...">
+       ロゴ
+   </div>
+   であれば、以下のCSSを追加することで「ロゴ」という文字を非表示にできる可能性があります。
+   もしHTML側でロゴ画像の下にテキストが記述されている場合は、以下のCSSを追加することで、そのテキストを非表示にします。
+*/
+.item-logo img + p {
+    display: none;
+}
+.item-logo img + br + p {
+    display: none;
+}
+.item-logo + br + p {
+    display: none;
+}
+
+
 @media (max-width: 768px) {
+    /* モバイルヘッダーのレスポンシブ修正 */
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -427,6 +482,7 @@ footer {
     }
 
     nav {
+        /* nav:not(.active) { display: none; } の代わりに、right: -100%で非表示を維持 */
         position: fixed;
         top: 60px;
         right: -100%;
@@ -452,6 +508,7 @@ footer {
 
     nav ul li {
         margin: 10px 0;
+        width: 100%;
     }
 
     .dropdown {
@@ -462,6 +519,10 @@ footer {
         border-left: 2px solid #212529;
         padding-left: 10px;
         margin-left: 10px;
+    }
+
+    .dropdown a {
+        padding: 5px 15px;
     }
 
     .service-preview a {
@@ -480,32 +541,12 @@ footer {
     footer .footer-item {
         margin-bottom: 20px;
     }
+    
+    footer .footer-item h3 {
+        text-align: center;
+    }
+
     .blog-item {
         max-width: 100%;
     }
-}
-
-/* ====================
-    画像用共通スタイル
-   ==================== */
-.service-image {
-    display: block;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-}
-
-/* ====================
-    SNSロゴ用スタイル (media.html)
-   ==================== */
-.item-logo {
-    display: block;
-    margin: 0 auto 20px auto;
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
 }
