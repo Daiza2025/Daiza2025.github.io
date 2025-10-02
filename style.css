@@ -69,7 +69,7 @@ p {
 }
 
 .contact a {
-    color: #d4e1ee;
+    color: #fff; /* フッター外のコンタクトリンクは白っぽい色でしたが、今回はフッター内で使用される想定で白色にしておきます。問題なければ戻してください。 */
     text-decoration: none;
 }
 
@@ -359,6 +359,7 @@ footer {
 .footer-item a {
     color: #fff;
     text-decoration: none;
+    display: block; /* リンクをブロック要素にしてクリック範囲を広げる */
 }
 
 .qr-code {
@@ -434,41 +435,21 @@ footer {
 
 /* ====================
     SNSロゴ用スタイル (media.html)
-    - ロゴ画像が表示されず、テキストが下に回り込んでしまう問題を解決
+    - ロゴが中央に表示され、サイズが固定されます。
    ==================== */
 .item-logo {
     display: block;
-    margin: 0 auto 10px auto; /* 20pxから10pxに調整し、ロゴ直下の余白を減らす */
-    width: 80px;
+    margin: 0 auto 10px auto;
+    width: 80px; 
     height: 80px;
     object-fit: contain;
-    /* ロゴが画像ファイルであることを前提とする */
 }
 
-/* HTML側でロゴ画像を囲む<div>や<p>内のテキストを非表示にする（最も直接的な解決策）
-   HTMLでロゴ画像を囲んでいる要素に、ロゴ画像以外のテキストが含まれている場合、
-   そのテキストが表示されてしまうため、ここではCSSでロゴ画像以外を隠すことはできません。
-   ただし、HTML構造が以下のような場合：
-   <div class="item-logo">
-       <img src="...">
-       ロゴ
-   </div>
-   であれば、以下のCSSを追加することで「ロゴ」という文字を非表示にできる可能性があります。
-   もしHTML側でロゴ画像の下にテキストが記述されている場合は、以下のCSSを追加することで、そのテキストを非表示にします。
-*/
-.item-logo img + p {
-    display: none;
-}
-.item-logo img + br + p {
-    display: none;
-}
-.item-logo + br + p {
-    display: none;
-}
-
-
+/* ====================
+    メディアクエリ (モバイル対応)
+    - ヘッダーのレイアウトとナビゲーションの動作を修正
+   ==================== */
 @media (max-width: 768px) {
-    /* モバイルヘッダーのレスポンシブ修正 */
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -482,7 +463,6 @@ footer {
     }
 
     nav {
-        /* nav:not(.active) { display: none; } の代わりに、right: -100%で非表示を維持 */
         position: fixed;
         top: 60px;
         right: -100%;
@@ -492,6 +472,8 @@ footer {
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease-in-out;
         z-index: 99;
+        /* モバイルメニュー非表示時にはdisplay: none; がJSで設定されるべきですが、
+           CSS単体ではright: -100%; で画面外に隠します */
     }
 
     nav.active {
@@ -541,11 +523,11 @@ footer {
     footer .footer-item {
         margin-bottom: 20px;
     }
-    
+
     footer .footer-item h3 {
         text-align: center;
     }
-
+    
     .blog-item {
         max-width: 100%;
     }
