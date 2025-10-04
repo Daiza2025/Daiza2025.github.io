@@ -19,7 +19,7 @@
         /* ブログ一覧グリッド */
         .blog-grid {
             display: grid;
-            /* 変更点: PCでは380px以上を確保しつつ2列、スマホでは1列 (1fr) に強制する */
+            /* PC表示時は380px以上を確保しつつ2列、スマホでは1列 (1fr) に強制する */
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
             gap: 30px;
             margin-top: 30px;
@@ -38,7 +38,7 @@
         }
         
         .blog-card:hover {
-            transform: translateY(-5px); 
+            transform: translateY(-5px); /* ホバーで少し浮き上がる */
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         
@@ -153,6 +153,21 @@
         <div class="blog-grid">
             
             <div class="blog-card">
+                <a href="blog-sns-types.html">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-date">2024年10月5日</span>
+                            <span class="card-category category-strategy">戦略・ノウハウ</span>
+                        </div>
+                        <h2 class="card-title">【戦略】中国人 KOL 効果を最大化！日本のホテル・旅館向け、主要SNS別コンテンツ戦略</h2>
+                        <p class="card-snippet">
+                            WeChat、小紅書、抖音の特性を理解し、ホテルが各プラットフォームで集客とブランド価値を高めるための具体的なコンテンツ戦略とKOL活用法を解説します。
+                        </p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="blog-card">
                 <a href="blog-tier1-tier2-cities.html">
                     <div class="card-content">
                         <div class="card-meta">
@@ -197,19 +212,6 @@
                 </a>
             </div>
             
-            <div class="blog-card" style="opacity: 0.6; pointer-events: none;">
-                <div class="card-content">
-                    <div class="card-meta">
-                        <span class="card-date">近日公開</span>
-                        <span class="card-category category-upcoming">準備中</span>
-                    </div>
-                    <h2 class="card-title">【戦略】高級旅館が中国人富裕層にアプローチすべきKOL選定のポイント</h2>
-                    <p class="card-snippet">
-                        （準備中）中国人KOL/KOCを効果的に活用するための選定基準、費用対効果の高い契約方法、そしてSNSプロモーション成功事例をご紹介します。
-                    </p>
-                </div>
-            </div>
-
         </div> </div> </main>
 
 <footer>
