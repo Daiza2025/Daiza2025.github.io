@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* ブログ一覧ページ専用スタイル */
+        /* ページヘッダーのスタイルは統一 */
         .page-header {
             background-color: #1d3557; /* ネイビーブルー */
             color: white;
             padding: 60px 20px;
             text-align: center;
+            margin-bottom: 40px; /* カードとの間にスペースを追加 */
         }
         .page-header h1 {
             font-size: 36px;
@@ -22,43 +23,45 @@
         }
 
         .blog-section {
-            padding: 40px 20px;
-            max-width: 1200px;
+            padding: 0 20px 40px;
+            max-width: 800px; /* カードの最大幅を制限して中央に寄せる */
             margin: 0 auto;
         }
         
         .blog-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            /* 縦一列のデザインに戻す */
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* カード間のスペースを調整 */
+            margin-top: 0;
         }
         
-        /* 統一デザインのブログカードスタイル */
+        /* 元のデザインに合わせた縦型カードスタイル */
         .blog-card {
-            display: block;
+            display: flex;
+            flex-direction: column;
             border: 1px solid #e9ecef;
             border-radius: 8px;
             overflow: hidden;
             text-decoration: none;
             color: #333;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: box-shadow 0.3s;
             background-color: white;
+            padding: 20px; /* 内側のパディングを追加 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 影をわずかに設定 */
         }
 
         .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* 以前のカードは画像なし、テキストのみのシンプルなデザイン */
         .blog-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+            display: none; /* 画像を非表示にする */
         }
 
         .card-content {
-            padding: 15px;
+            padding: 0;
         }
 
         .card-content .category {
@@ -73,21 +76,31 @@
         }
 
         .card-content h3 {
-            font-size: 18px;
+            font-size: 20px;
             margin: 0 0 10px 0;
             line-height: 1.5;
             color: #212529;
-            /* 複数行省略のためのスタイル */
+            font-weight: bold; /* タイトルを太字に */
+        }
+        
+        /* 記事の概要テキストを追加（スクリーンショットのデザインに合わせてpタグで追加） */
+        .card-content p.description {
+            font-size: 15px;
+            color: #6c757d;
+            margin-bottom: 15px;
+            line-height: 1.6;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 2; /* 2行で省略 */
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
 
         .card-content .date {
             font-size: 14px;
             color: #6c757d;
             margin: 0;
+            display: block; /* 公開日を単独行にする */
         }
 
         /* モバイル対応 */
@@ -95,8 +108,8 @@
             .page-header h1 {
                 font-size: 30px;
             }
-            .blog-list {
-                grid-template-columns: 1fr;
+            .blog-section {
+                padding: 0 15px 30px;
             }
         }
     </style>
@@ -142,37 +155,56 @@
         <div class="blog-list">
             
             <a href="blog-holiday-strategy.html" class="blog-card">
-                <img src="画像ファイル名（未指定）" alt="中国の祝日と旅行需要に関する記事のサムネイル">
                 <div class="card-content">
                     <span class="category">インサイト</span>
                     <h3>中国の祝日と旅行需要の関係：戦略的マーケティングでインバウンド需要を最大化</h3>
                     <p class="date">公開日：2024年6月8日</p>
+                    <p class="description">中国の主要祝日（春節、国慶節、労働節など）ごとの旅行トレンドと消費行動を徹底解説。戦略的マーケティングでホテルのインバウンドROIを最大化する。</p>
                 </div>
             </a>
-            <a href="blog-China-is-big.html" class="blog-card">
-                <img src="画像ファイル名（未指定）" alt="中国市場攻略に関する記事のサムネイル">
+            
+            <a href="blog-sns-types.html" class="blog-card">
+                <div class="card-content">
+                    <span class="category">戦略・ノウハウ</span>
+                    <h3>【戦略】中国人KOL効果を最大化！日本のホテル・旅館向け、主要SNS別コンテンツ戦略</h3>
+                    <p class="date">公開日：2024年7月15日</p>
+                    <p class="description">WeChat、小紅書、抖音の特性を理解し、ホテルが各プラットフォームで集客とブランド価値を高めるための具体的なコンテンツ戦略とKOL活用法を解説します。</p>
+                </div>
+            </a>
+
+            <a href="blog-tier-1-tier-2-cities.html" class="blog-card">
                 <div class="card-content">
                     <span class="category">インサイト</span>
-                    <h3>中国市場攻略の鍵：ターゲット理解と戦略的アプローチ</h3>
-                    <p class="date">公開日：2024年10月15日</p>
+                    <h3>【インサイト】「ホテル 中国市場 マーケティング」の成否を分ける：中国都市のTier分類を理解し、ターゲットを絞り込む戦略</h3>
+                    <p class="date">公開日：2024年6月12日</p>
+                    <p class="description">マーケティング戦略は、中国の地域特性に合わせて細分化する必要があります。Tier分類を基にした旅行者のニーズと戦略の違いを解説します。</p>
                 </div>
             </a>
             
             <a href="blog-WhichOTA.html" class="blog-card">
-                <img src="画像ファイル名（未指定）" alt="中国OTAに関する記事のサムネイル">
                 <div class="card-content">
                     <span class="category">戦略・ノウハウ</span>
-                    <h3>【最新版】ホテルが中国インバウンド集客で狙うべきOTA戦略</h3>
-                    <p class="date">公開日：2024年5月22日</p>
+                    <h3>【戦略】ホテルが知るべき中国主要OTA比較 最適なプラットフォーム戦略で集客を最大化</h3>
+                    <p class="date">公開日：2024年5月20日</p>
+                    <p class="description">多くの日本のホテルや観光事業者が直面する、「どのOTAをターゲットにすべきか」「複数のプラットフォームをどう使い分けるべきか」という課題を解決します。</p>
+                </div>
+            </a>
+            
+            <a href="blog-China-is-big.html" class="blog-card">
+                <div class="card-content">
+                    <span class="category">インサイト</span>
+                    <h3>【インサイト】中国市場攻略の鍵：ターゲット理解と戦略的アプローチ</h3>
+                    <p class="date">公開日：2024年4月28日</p>
+                    <p class="description">中国の広大な市場で成功するためには、それぞれの地域の独自性を深く理解することが不可欠です。都市ごとの行動様式と情報チャネルの違いを解説します。</p>
                 </div>
             </a>
             
             <a href="blog-trades-marketing.html" class="blog-card">
-                <img src="画像ファイル名（未指定）" alt="旅行会社マーケティングに関する記事のサムネイル">
                 <div class="card-content">
                     <span class="category">戦略・ノウハウ</span>
                     <h3>B2Bロードショー成功の鍵：中国旅行会社を動かすマーケティング術</h3>
                     <p class="date">公開日：2024年3月5日</p>
+                    <p class="description">中国の旅行会社と効果的に連携し、B2Bマーケティングを成功させるためのロードショー戦略とセールスコール実行のノウハウを解説します。</p>
                 </div>
             </a>
 
