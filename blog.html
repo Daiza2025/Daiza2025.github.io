@@ -13,14 +13,14 @@
         .blog-container {
             max-width: 1080px;
             margin: 40px auto;
-            padding: 0 20px;
+            padding: 0 15px; /* 左右に少し余白を追加し、スマホでの端への張り付きを防ぐ */
         }
 
         /* ブログ一覧グリッド */
         .blog-grid {
             display: grid;
-            /* PC表示時は2列。 minmax(350px, 1fr)で、スマホでは1列に自動調整 */
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            /* 変更点: PCでは380px以上を確保しつつ2列、スマホでは1列 (1fr) に強制する */
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
             gap: 30px;
             margin-top: 30px;
         }
@@ -34,11 +34,11 @@
             transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
-            height: 100%; /* 高さの統一 */
+            height: 100%; 
         }
         
         .blog-card:hover {
-            transform: translateY(-5px); /* ホバーで少し浮き上がる */
+            transform: translateY(-5px); 
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         
@@ -100,6 +100,17 @@
             color: #495057;
             margin-bottom: 15px;
             flex-grow: 1;
+        }
+        
+        /* スマホ向け調整 (768px未満の画面幅ではグリッドを1列に固定) */
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr; /* 1列に固定 */
+                gap: 20px; /* スマホでは間隔を少し狭く */
+            }
+            .blog-container {
+                padding: 0 10px; /* スマホでの余白を調整 */
+            }
         }
     </style>
 </head>
