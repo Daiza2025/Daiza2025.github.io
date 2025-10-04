@@ -4,9 +4,104 @@
     <meta name="description" content="日本の素晴らしい観光素材やブランドと中華圏市場との間の架け橋へようこそ！当社の強みは、15年以上のセールス＆マーケティング経験を持つ日本人と中国人とのパートナーシップにあります。">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マーケティング日本</title>
+    <title>マーケティング日本 | ブログ</title>
     <link rel="icon" href="Logo M.jpg" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* メインコンテナ */
+        .blog-container {
+            max-width: 1080px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* ブログ一覧グリッド */
+        .blog-grid {
+            display: grid;
+            /* PC表示時は2列。 minmax(350px, 1fr)で、スマホでは1列に自動調整 */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* 個々の記事カード */
+        .blog-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* 高さの統一 */
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px); /* ホバーで少し浮き上がる */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block; 
+            height: 100%;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 13px;
+            color: #6c757d;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between; 
+        }
+
+        .card-category {
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            white-space: nowrap; /* カテゴリ名が改行されないように */
+        }
+
+        .category-insight {
+            color: #28a745; 
+            background-color: #e9f7eb; 
+        }
+        
+        .category-strategy {
+            color: #007bff; 
+            background-color: #eaf5ff;
+        }
+        
+        .category-upcoming {
+            color: #6c757d; 
+            background-color: #f8f9fa;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #212529;
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-snippet {
+            font-size: 14px;
+            color: #495057;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
 
@@ -39,60 +134,26 @@
 </nav>
 </header>
 
-<section class="blog-list">
-    <div class="blog-item">
-        <a href="blog-China-is-big.html">
-            <h3>【インサイト】中国市場攻略の鍵：ターゲット理解と戦略的アプローチ</h3>
-            <p class="post-date">公開日：2024年4月28日</p>
-            <p>中国の広大な市場で成功するためには、それぞれの地域の独自性を深く理解することが不可欠です。</p>
-        </a>
-    </div>
-</section>
+<main>
+    <div class="blog-container">
+        <h1 style="font-size: 32px; color: #212529; text-align: center; margin-bottom: 10px;">インサイト & 戦略ブログ</h1>
+        <p style="text-align: center; color: #6c757d; font-size: 16px;">ホテル・観光事業者様向け、中国市場攻略の鍵となる最新情報と実践ノウハウ。</p>
 
-<section class="blog-list">
-    <div class="blog-item">
-        <a href="blog-WhichOTA.html">
-            <h3>【戦略】ホテルが知るべき中国主要OTA比較 最適なプラットフォーム戦略で集客を最大化</h3>
-            <p class="post-date">公開日：2024年5月20日</p>
-            <p>多くの日本のホテルや観光事業者の皆さまは、「どのOTAをターゲットにすべきか」「複数のプラットフォームをどう使い分けるべきか」という課題に直面しています。</p>
-        </a>
-    </div>
-</section>
+        <div class="blog-grid">
+            
+            <div class="blog-card">
+                <a href="blog-tier1-tier2-cities.html">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-date">2024年6月12日</span>
+                            <span class="card-category category-insight">インサイト</span>
+                        </div>
+                        <h2 class="card-title">【インサイト】「ホテル 中国市場 マーケティング」の成否を分ける：中国都市のTier分類を理解し、ターゲットを絞り込む戦略</h2>
+                        <p class="card-snippet">
+                            Tier 1（北京・上海）の成熟した旅行者と、Tier 2・3（成都・杭州）の急増する新規旅行者。都市Tierによる旅行ニーズの違いを把握し、効果的な戦略を立案します。
+                        </p>
+                    </div>
+                </a>
+            </div>
 
-<section class="blog-list">
-    <div class="blog-item">
-        <a href="blog-tier1-tier2-cities.html">
-            <h3>【インサイト】「ホテル 中国市場 マーケティング」の成否を分ける：中国都市のTier分類を理解し、ターゲットを絞り込む戦略</h3>
-            <p class="post-date">公開日：2024年6月12日</p>
-            <p>マーケティング戦略は、中国の地域特性に合わせて細分化する必要があります。</p>
-        </a>
-    </div>
-</section>
-
-
-<footer>
-    <div class="footer-content">
-        <div class="footer-item">
-            <h3>マーケティング日本</h3>
-            <p>
-                Marketing Nippon<br>
-                中国オフィス & 日本オフィス<br>
-                共同代表：沈＆林
-            </p>
-        </div>
-        <div class="footer-item">
-            <h3>連絡先</h3>
-            <p>
-                <a href="https://marketingnippon.com">www.marketingnippon.com</a><br>
-                <a href="mailto:info@marketingnippon.com">info@marketingnippon.com</a>
-            </p>
-        </div>
-        <div class="footer-item">
-            <h3>Hours</h3>
-            <p>Monday—Friday<br>9am—5pm</p>
-        </div>
-    </div>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
+            <div class="blog-
