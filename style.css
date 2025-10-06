@@ -154,6 +154,22 @@ nav li:hover .dropdown {
     display: block;
 }
 
+/* ★追加: ナビゲーション内のお問い合わせボタン用スタイル */
+nav a.button-nav {
+    /* 基本のnav aスタイルをリセットし、ボタン化 */
+    background-color: #1d3557; /* 強調したいネイビーブルー */
+    color: white;
+    padding: 8px 15px; 
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav a.button-nav:hover {
+    background-color: #457b9d; /* ホバー時の色 */
+    color: white;
+}
+
 .menu-toggle {
     display: none;
     background: none;
@@ -466,8 +482,8 @@ footer {
     ブログ記事ページ固有のスタイル（追加部分）
     ==================== */
 /* -------------------
-   記事コンテンツの全体設定
-   ------------------- */
+    記事コンテンツの全体設定
+    ------------------- */
 .article-container {
     max-width: 800px;
     margin: 40px auto;
@@ -494,8 +510,15 @@ footer {
 }
 
 /* -------------------
-   記事本文内の見出し・リスト
-   ------------------- */
+    記事本文内の見出し・リスト
+    ------------------- */
+/* ★修正: .article-container内のh1, h2, h3を強制的に左寄せに統一 */
+.article-container h1,
+.article-container h2,
+.article-container h3 {
+    text-align: left !important; 
+}
+
 .article-container h2 {
     /* 統一されたh2デザイン (ネイビーブルー系) */
     font-size: 24px;
@@ -541,8 +564,8 @@ footer {
 }
 
 /* -------------------
-   ボックスデザイン
-   ------------------- */
+    ボックスデザイン
+    ------------------- */
 /* サポート・CTAボックスのデザイン統一 (青緑系) */
 .support-box {
     background-color: #f8f9fa; 
@@ -645,6 +668,13 @@ footer {
         padding: 5px 15px;
     }
 
+    /* ★追加: モバイル時のお問い合わせボタンの調整 */
+    nav ul li a.button-nav {
+        display: block; /* 100%幅に広げる */
+        text-align: center;
+        margin-top: 10px;
+    }
+
     /* モバイルサービスカードの調整 */
     .service-items {
         padding: 0 20px; 
@@ -679,8 +709,8 @@ footer {
     }
     
     /* -------------------
-       ブログ記事のモバイルフレンドリーな調整
-       ------------------- */
+        ブログ記事のモバイルフレンドリーな調整
+        ------------------- */
     @media (max-width: 600px) {
         .article-container {
             font-size: 16px;
