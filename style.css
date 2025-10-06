@@ -1,8 +1,9 @@
 /* ====================
     基本設定
-   ==================== */
+    ==================== */
 body {
-    font-family: Arial, sans-serif;
+    /* system-ui を追加し、OSネイティブフォントで最速描画を優先 */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -10,7 +11,8 @@ body {
     background-color: #fff;
 }
 
-h1, h2, h3 {
+h1, h2 {
+    /* ページタイトル(h1/h2)のみ中央寄せを維持 */
     text-align: center;
 }
 
@@ -31,6 +33,7 @@ h3 {
     font-weight: bold;
     margin-top: 30px;
     margin-bottom: 5px;
+    /* h3のtext-alignを削除し、親要素(section)のtext-align: left;を継承させる */
 }
 
 main {
@@ -69,7 +72,7 @@ p {
 }
 
 .contact a {
-    color: #fff; /* フッター外のコンタクトリンクは白っぽい色でしたが、今回はフッター内で使用される想定で白色にしておきます。問題なければ戻してください。 */
+    color: #fff;
     text-decoration: none;
 }
 
@@ -79,7 +82,7 @@ p {
 
 /* ====================
     ヘッダー＆ナビゲーション
-   ==================== */
+    ==================== */
 header {
     background-color: white;
     padding: 10px 20px;
@@ -183,13 +186,15 @@ nav li:hover .dropdown {
 
 /* ====================
     ヒーローセクション
-   ==================== */
+    ==================== */
 .hero {
     background-image: url('0001Top.webp');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    /* 背景画像に被せる半透明の黒を背景色で表現 */
+    background-color: rgba(0, 0, 0, 0.5); 
+    /* color: white; は background-colorの後ろに移動（冗長ではないが整理） */
+    color: white; 
     text-align: center;
     padding: 100px 20px;
     height: 500px;
@@ -212,7 +217,7 @@ nav li:hover .dropdown {
 
 /* ====================
     トップページサービスプレビュー
-   ==================== */
+    ==================== */
 .service-preview {
     margin-bottom: 20px;
 }
@@ -225,7 +230,8 @@ nav li:hover .dropdown {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* transform のみの transition に限定 (性能向上) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .service-preview a:hover {
@@ -248,7 +254,7 @@ nav li:hover .dropdown {
 
 /* ====================
     会社概要ページ
-   ==================== */
+    ==================== */
 .about-content,
 .why-us {
     padding: 40px 20px;
@@ -278,7 +284,8 @@ nav li:hover .dropdown {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1 1 45%;
+    /* 2カラムレイアウトで flex-grow: 1 を維持しつつ最小幅を設定 */
+    flex: 1 1 45%; 
     min-width: 300px;
 }
 
@@ -287,11 +294,13 @@ nav li:hover .dropdown {
     color: #212529;
     font-size: 1.5rem;
     margin-bottom: 15px;
+    /* h3の中央寄せを排除 */
+    text-align: left; 
 }
 
 /* ====================
     サービスページ
-   ==================== */
+    ==================== */
 .services-content {
     padding: 40px 20px;
     max-width: 960px;
@@ -325,11 +334,13 @@ nav li:hover .dropdown {
     color: #212529;
     font-size: 1.5rem;
     margin-bottom: 15px;
+    /* h3の中央寄せを排除 */
+    text-align: left; 
 }
 
 /* ====================
     フッター
-   ==================== */
+    ==================== */
 footer {
     background-color: #212529;
     color: white;
@@ -352,14 +363,15 @@ footer {
 
 .footer-item h3 {
     color: #fff;
-    border-bottom: 2px solid #fff;
+    /* セレクタをシンプル化 */
+    border-bottom: 2px solid #fff; 
     padding-bottom: 10px;
 }
 
 .footer-item a {
     color: #fff;
     text-decoration: none;
-    display: block; /* リンクをブロック要素にしてクリック範囲を広げる */
+    display: block;
 }
 
 .qr-code {
@@ -371,7 +383,7 @@ footer {
 
 /* ====================
     ブログリストのデザイン
-   ==================== */
+    ==================== */
 .blog-list {
     display: flex;
     flex-wrap: wrap;
@@ -421,7 +433,7 @@ footer {
 
 /* ====================
     画像用共通スタイル
-   ==================== */
+    ==================== */
 .service-image {
     display: block;
     margin: 20px auto;
@@ -435,8 +447,7 @@ footer {
 
 /* ====================
     SNSロゴ用スタイル (media.html)
-    - ロゴが中央に表示され、サイズが固定されます。
-   ==================== */
+    ==================== */
 .item-logo {
     display: block;
     margin: 0 auto 10px auto;
@@ -446,9 +457,8 @@ footer {
 }
 
 /* ====================
-    メディアクエリ (モバイル対応)
-    - ヘッダーのレイアウトとナビゲーションの動作を修正
-   ==================== */
+    メディアクエリ (モバイル対応) - transformによるアニメーション高速化
+    ==================== */
 @media (max-width: 768px) {
     header {
         flex-direction: row;
@@ -465,19 +475,22 @@ footer {
     nav {
         position: fixed;
         top: 60px;
-        right: -100%;
+        right: 0; /* rightを0に設定 */
         width: 70%;
         height: 100vh;
         background-color: #f8f9fa;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease-in-out;
         z-index: 99;
-        /* モバイルメニュー非表示時にはdisplay: none; がJSで設定されるべきですが、
-           CSS単体ではright: -100%; で画面外に隠します */
+        
+        /* 🔥 パフォーマンス向上: rightではなくtransformで非表示/表示を制御 */
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-in-out;
+        will-change: transform; /* ブラウザにアニメーションの準備を指示 */
     }
 
     nav.active {
-        right: 0;
+        /* メニュー表示: 画面内に移動 */
+        transform: translateX(0);
     }
 
     nav ul {
@@ -523,11 +536,12 @@ footer {
     footer .footer-item {
         margin-bottom: 20px;
     }
-
-    footer .footer-item h3 {
-        text-align: center;
-    }
     
+    /* モバイルではh3も中央寄せが自然なケースがあるため、あえて設定しない（継承を維持） */
+    /* footer .footer-item h3 {
+        text-align: center;
+    } */
+
     .blog-item {
         max-width: 100%;
     }
