@@ -191,9 +191,7 @@ nav li:hover .dropdown {
     background-image: url('0001Top.webp');
     background-size: cover;
     background-position: center;
-    /* 背景画像に被せる半透明の黒を背景色で表現 */
     background-color: rgba(0, 0, 0, 0.5); 
-    /* color: white; は background-colorの後ろに移動（冗長ではないが整理） */
     color: white; 
     text-align: center;
     padding: 100px 20px;
@@ -216,21 +214,36 @@ nav li:hover .dropdown {
 }
 
 /* ====================
-    トップページサービスプレビュー
+    トップページサービスプレビュー (高さ揃えのためFlexboxを適用)
     ==================== */
+/* サービスアイテム全体を Flexbox に設定 */
+.service-items {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center;
+    padding: 20px 0;
+}
+
 .service-preview {
-    margin-bottom: 20px;
+    /* 3分割のための幅と最小幅を設定 */
+    flex: 1 1 calc(33.333% - 20px); 
+    min-width: 300px;
+    margin-bottom: 20px; /* アイテム間の縦スペースを確保 */
 }
 
 .service-preview a {
-    display: block;
+    /* カード自体のデザイン */
+    display: flex; 
+    flex-direction: column;
+    height: 100%; /* 親要素(div)の高さ全体を使用し、高さを揃えるキー設定 */
+    
     text-decoration: none;
     color: inherit;
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* transform のみの transition に限定 (性能向上) */
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
@@ -247,6 +260,8 @@ nav li:hover .dropdown {
 }
 
 .service-preview p {
+    /* 説明文が余ったスペースを埋める（高さ揃えに必須） */
+    flex-grow: 1; 
     color: #6c757d;
     font-size: 1rem;
     line-height: 1.6;
@@ -284,7 +299,6 @@ nav li:hover .dropdown {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* 2カラムレイアウトで flex-grow: 1 を維持しつつ最小幅を設定 */
     flex: 1 1 45%; 
     min-width: 300px;
 }
@@ -294,12 +308,11 @@ nav li:hover .dropdown {
     color: #212529;
     font-size: 1.5rem;
     margin-bottom: 15px;
-    /* h3の中央寄せを排除 */
     text-align: left; 
 }
 
 /* ====================
-    サービスページ
+    サービスページ (サービス単体ページのデザイン)
     ==================== */
 .services-content {
     padding: 40px 20px;
@@ -314,19 +327,14 @@ nav li:hover .dropdown {
     color: #212529;
 }
 
-.service-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
+/* サービスページ内の複数アイテムを並べるためのレイアウト */
 .service-items .item {
     background-color: #f8f9fa;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(50% - 20px);
+    /* トップページとは異なり、2列レイアウトを想定 */
+    flex: 1 1 calc(50% - 20px); 
     min-width: 300px;
 }
 
@@ -334,7 +342,6 @@ nav li:hover .dropdown {
     color: #212529;
     font-size: 1.5rem;
     margin-bottom: 15px;
-    /* h3の中央寄せを排除 */
     text-align: left; 
 }
 
@@ -363,7 +370,6 @@ footer {
 
 .footer-item h3 {
     color: #fff;
-    /* セレクタをシンプル化 */
     border-bottom: 2px solid #fff; 
     padding-bottom: 10px;
 }
@@ -475,7 +481,7 @@ footer {
     nav {
         position: fixed;
         top: 60px;
-        right: 0; /* rightを0に設定 */
+        right: 0; 
         width: 70%;
         height: 100vh;
         background-color: #f8f9fa;
@@ -485,7 +491,7 @@ footer {
         /* 🔥 パフォーマンス向上: rightではなくtransformで非表示/表示を制御 */
         transform: translateX(100%); 
         transition: transform 0.3s ease-in-out;
-        will-change: transform; /* ブラウザにアニメーションの準備を指示 */
+        will-change: transform; 
     }
 
     nav.active {
@@ -520,8 +526,19 @@ footer {
         padding: 5px 15px;
     }
 
+    /* モバイルサービスカードの調整 */
+    .service-items {
+        padding: 0 20px; 
+    }
+    
+    .service-preview {
+        flex: 1 1 100%; /* 1列表示に */
+        min-width: unset; 
+        margin-bottom: 20px; 
+    }
+    
     .service-preview a {
-        padding: 15px;
+        padding: 15px; /* モバイルでのパディングを調整 */
     }
 
     .service-preview h3 {
@@ -537,11 +554,6 @@ footer {
         margin-bottom: 20px;
     }
     
-    /* モバイルではh3も中央寄せが自然なケースがあるため、あえて設定しない（継承を維持） */
-    /* footer .footer-item h3 {
-        text-align: center;
-    } */
-
     .blog-item {
         max-width: 100%;
     }
