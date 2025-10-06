@@ -463,7 +463,126 @@ footer {
 }
 
 /* ====================
-    メディアクエリ (モバイル対応) - transformによるアニメーション高速化
+    ブログ記事ページ固有のスタイル（追加部分）
+    ==================== */
+/* -------------------
+   記事コンテンツの全体設定
+   ------------------- */
+.article-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.8;
+    font-size: 17px; 
+    color: #333; 
+}
+.article-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.article-header h1 {
+    font-size: 32px; 
+    color: #212529;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+.article-meta {
+    color: #6c757d;
+    font-size: 15px; 
+    display: block;
+    margin-top: 5px;
+}
+
+/* -------------------
+   記事本文内の見出し・リスト
+   ------------------- */
+.article-container h2 {
+    /* 統一されたh2デザイン (ネイビーブルー系) */
+    font-size: 24px;
+    color: #1d3557; 
+    border-bottom: 2px solid #1d3557; 
+    padding-bottom: 8px;
+    margin-top: 45px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-align: left; /* article-container内のh2は左寄せにする */
+}
+.article-container h3 {
+    /* 統一されたh3デザイン */
+    font-size: 19px;
+    color: #212529;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 5px solid #e9ecef; 
+    padding-left: 10px;
+    font-weight: 600;
+    text-align: left; /* h3も左寄せに統一 */
+}
+.article-container p {
+    margin-bottom: 20px;
+}
+.article-container ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+.article-container ul li {
+    margin-bottom: 8px;
+}
+.article-container ol {
+    list-style: decimal;
+    margin-left: 20px;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+.article-container ol li {
+    margin-bottom: 8px;
+}
+
+/* -------------------
+   ボックスデザイン
+   ------------------- */
+/* サポート・CTAボックスのデザイン統一 (青緑系) */
+.support-box {
+    background-color: #f8f9fa; 
+    border-left: 5px solid #457b9d; 
+    padding: 25px;
+    border-radius: 5px;
+    margin-top: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.support-box h3 {
+    color: #457b9d; 
+    border-left: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+.support-box ul li a {
+    color: #457b9d !important; /* リンク色をボックスの色に合わせる */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* 内部リンクセクション (ネイビーブルー系) */
+.internal-links {
+    margin-top: 50px;
+    border-top: 1px solid #ddd;
+    padding-top: 25px;
+}
+.internal-links a {
+    color: #1d3557; 
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.internal-links a:hover {
+    text-decoration: underline;
+}
+
+/* ====================
+    メディアクエリ (モバイル対応)
     ==================== */
 @media (max-width: 768px) {
     header {
@@ -545,6 +664,7 @@ footer {
         font-size: 1.5rem;
     }
 
+    /* フッターのモバイル対応設定（既存のコードを維持） */
     footer .footer-content {
         flex-direction: column;
         text-align: center;
@@ -556,5 +676,24 @@ footer {
     
     .blog-item {
         max-width: 100%;
+    }
+    
+    /* -------------------
+       ブログ記事のモバイルフレンドリーな調整
+       ------------------- */
+    @media (max-width: 600px) {
+        .article-container {
+            font-size: 16px;
+            padding: 0 15px;
+        }
+        .article-header h1 {
+            font-size: 24px;
+        }
+        .article-container h2 {
+            font-size: 20px;
+        }
+        .article-container h3 {
+            font-size: 17px;
+        }
     }
 }
