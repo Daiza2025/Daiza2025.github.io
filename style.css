@@ -154,10 +154,10 @@ nav li:hover .dropdown {
     display: block;
 }
 
-/* ★追加: ナビゲーション内のお問い合わせボタン用スタイル */
+/* ★修正: ナビゲーション内のお問い合わせボタン用スタイル (色を #457b9d に調整) */
 nav a.button-nav {
     /* 基本のnav aスタイルをリセットし、ボタン化 */
-    background-color: #1d3557; /* 強調したいネイビーブルー */
+    background-color: #457b9d; /* 落ち着いた青に変更 */
     color: white;
     padding: 8px 15px; 
     border-radius: 4px;
@@ -166,7 +166,7 @@ nav a.button-nav {
 }
 
 nav a.button-nav:hover {
-    background-color: #457b9d; /* ホバー時の色 */
+    background-color: #1d3557; /* ホバー時は濃いネイビー */
     color: white;
 }
 
