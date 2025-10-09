@@ -668,11 +668,17 @@ footer {
         padding: 5px 15px;
     }
 
-    /* ★追加: モバイル時のお問い合わせボタンの調整 */
+    /* ★修正: モバイル時のお問い合わせボタンの調整（幅を調整） */
     nav ul li a.button-nav {
-        display: block; /* 100%幅に広げる */
+        display: block; 
         text-align: center;
         margin-top: 10px;
+        /* ↓↓↓ ここから修正/追記 ↓↓↓ */
+        width: auto; 
+        max-width: 250px; /* ボタンの最大幅を制限して、はみ出しを防ぐ */
+        margin-left: auto; /* 中央寄せのために追加 */
+        margin-right: auto; /* 中央寄せのために追加 */
+        /* ↑↑↑ ここまで修正/追記 ↑↑↑ */
     }
 
     /* モバイルサービスカードの調整 */
