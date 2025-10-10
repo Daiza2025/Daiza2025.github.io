@@ -668,17 +668,15 @@ footer {
         padding: 5px 15px;
     }
 
-    /* ★修正: モバイル時のお問い合わせボタンの調整（幅を調整） */
+    /* ★最終修正: モバイル時のお問い合わせボタンの調整（幅を強制的に修正） */
     nav ul li a.button-nav {
-        display: block; 
-        text-align: center;
-        margin-top: 10px;
-        /* ↓↓↓ ここから修正/追記 ↓↓↓ */
-        width: auto; 
-        max-width: 250px; /* ボタンの最大幅を制限して、はみ出しを防ぐ */
-        margin-left: auto; /* 中央寄せのために追加 */
-        margin-right: auto; /* 中央寄せのために追加 */
-        /* ↑↑↑ ここまで修正/追記 ↑↑↑ */
+        display: block !important; /* display: blockを強制 */
+        text-align: center !important;
+        margin-top: 10px !important;
+        width: auto !important; 
+        max-width: 250px !important; /* ボタンの最大幅を制限して、はみ出しを強制的に防ぐ */
+        margin-left: auto !important; /* 中央寄せを強制 */
+        margin-right: auto !important; /* 中央寄せを強制 */
     }
 
     /* モバイルサービスカードの調整 */
@@ -713,8 +711,6 @@ footer {
     .blog-item {
         max-width: 100%;
     }
-    
-
     
     /* -------------------
         ブログ記事のモバイルフレンドリーな調整
