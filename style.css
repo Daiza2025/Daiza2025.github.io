@@ -731,3 +731,9 @@ footer {
         }
     }
 }
+/* ★★★ 最終緊急修正: モバイルメニュー内ボタンのサイズ強制修正 ★★★ */
+@media (max-width: 768px) {
+    nav.active ul li a.button-nav {
+        max-width: 200px !important; /* 幅をさらに強制的に制限 */
+    }
+}
