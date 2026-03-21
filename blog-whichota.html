@@ -38,7 +38,6 @@
     </script>
     
     <style>
-        /* 既存のスタイルを維持 */
         .article-container {
             max-width: 800px;
             margin: 0 auto;
@@ -65,7 +64,7 @@
         .article-container h2 {
             font-size: 24px;
             color: #457b9d;
-            margin-top: 30px;
+            margin-top: 40px;
             padding-bottom: 5px;
             border-bottom: 1px dashed #ced4da;
             font-weight: 600;
@@ -95,7 +94,6 @@
             margin: 30px 0;
             border-radius: 4px;
         }
-        /* 比較表のスタイル */
         .ota-table {
             width: 100%;
             border-collapse: collapse;
@@ -113,15 +111,24 @@
         }
         .internal-links {
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ced4da;
+            padding: 20px;
+            background: #f1f4f9;
+            border-radius: 8px;
             font-size: 15px;
+        }
+        .internal-links strong {
+            display: block;
+            margin-bottom: 10px;
         }
         .internal-links a {
             display: block;
             color: #457b9d;
             text-decoration: none;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .internal-links a:hover {
+            text-decoration: underline;
         }
         @media (max-width: 768px) {
             .article-title { font-size: 26px; }
@@ -132,19 +139,32 @@
 <body>
 
 <header>
-    <div class="logo">
-        <a href="index.html">
-            <img src="MN Loggo.png" alt="マーケティングニッポンのロゴ">
-        </a>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">ホーム</a></li>
-            <li><a href="about.html">会社概要</a></li>
-            <li><a href="blog.html">ブログ</a></li>
-            <li><a href="https://forms.office.com/r/vnJWyKpeku" class="button-nav">お問い合わせ</a></li>
-        </ul>
-    </nav>
+<div class="logo">
+    <a href="index.html">
+        <img src="MN Loggo.png" alt="マーケティングニッポンのロゴ">
+    </a>
+</div>
+<button class="menu-toggle" aria-controls="main-nav" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</button>
+<nav>
+    <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li>
+            <a href="#">サービス</a>
+            <ul class="dropdown">
+                <li><a href="trades.html">旅行会社コネクション</a></li>
+                <li><a href="media.html">SNSマーケティング支援</a></li>
+                <li><a href="pr.html">PRキャンペーン</a></li>
+            </ul>
+        </li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="https://forms.office.com/r/vnJWyKpeku" class="button-nav">お問い合わせ</a></li>
+    </ul>
+</nav>
 </header>
 
 <main>
@@ -165,7 +185,7 @@
             </p>
 
             <h2>2026年版 主要3大OTA徹底比較</h2>
-            <p>AI検索エンジン（Perplexity等）も注目する、最新のプラットフォーム特性を一覧にまとめました。</p>
+            <p>最新のプラットフォーム特性を一覧にまとめました。</p>
 
             <table class="ota-table">
                 <thead>
@@ -206,7 +226,7 @@
             <p>OTAを予約の場だけで終わらせてはいけません。予約した顧客をWeChat公式アカウントへ誘導し、宿泊中・宿泊後のコミュニケーションを自社で握ることで、手数料に依存しない集客構造へと進化させます。</p>
 
             <div class="support-box">
-                <h2>【戦略の要諦】一次情報の価値</h2>
+                <h3>【戦略の要諦】一次情報の価値</h3>
                 <p>
                     冷え込む市場でも、現場（経由便の動きやSNSのトレンド）を熟知していれば勝機はあります。私たちは、データだけでなく<strong>「沈と林の現場の目」</strong>を通じて、貴館がどのOTAで勝負すべきかを明確に診断します。
                 </p>
@@ -230,17 +250,29 @@
 </main>
 
 <footer>
-    <div class="footer-content" style="display: flex; justify-content: space-around; padding: 40px 20px; background: #f8f9fa;">
-        <div class="footer-item">
-            <h3>マーケティング日本</h3>
-            <p>Marketing Nippon<br>共同代表：沈＆林</p>
-        </div>
-        <div class="footer-item">
-            <h3>連絡先</h3>
-            <p><a href="mailto:info@marketingnippon.com">info@marketingnippon.com</a></p>
-        </div>
+<div class="footer-content">
+    <div class="footer-item">
+        <h3>マーケティング日本</h3>
+        <p>
+            Marketing Nippon<br>
+            中国オフィス & 日本オフィス<br>
+            共同代表：沈＆林
+        </p>
     </div>
+    <div class="footer-item">
+        <h3>連絡先</h3>
+        <p>
+            <a href="https://marketingnippon.com">www.marketingnippon.com</a><br>
+            <a href="mailto:info@marketingnippon.com">info@marketingnippon.com</a>
+        </p>
+    </div>
+    <div class="footer-item">
+        <h3>営業時間</h3>
+        <p>Monday—Friday<br>9am—5pm</p>
+    </div>
+</div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
