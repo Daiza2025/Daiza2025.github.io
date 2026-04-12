@@ -3,72 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【経営層向け】マーケットホッピングの代償と、中国市場を「資産」に変える戦略 | マーケティング日本</title>
+    <title>【経営層向け】マーケットホッピングの代償と、中国市場を「資産」に変えるハイブリッド戦略 | マーケティング日本</title>
     <meta name="description" content="不安定な情勢下で市場を転々とする「マーケットホッピング」は負け戦。RED（デジタル）と泥臭い営業（アナログ）を融合し、揺るがない収益基盤を築く方法。">
     <link rel="icon" href="Logo M.jpg" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* 全体レイアウト */
-        body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; margin: 0; padding: 0; color: #343a40; }
+        /* 共通フォーマット継承 */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            color: #343a40;
+        }
+        .article-header {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .article-title {
+            font-size: 32px;
+            color: #1d3557;
+            margin-top: 0;
+            font-weight: 700;
+        }
+        .article-meta {
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+        .article-container h2 {
+            font-size: 24px;
+            color: #457b9d;
+            margin-top: 40px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #ced4da;
+            font-weight: 600;
+        }
+        .article-container h3 {
+            font-size: 20px;
+            color: #1d3557;
+            margin-top: 25px;
+            font-weight: 600;
+        }
         
-        /* ヘッダー・ナビゲーション */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .logo img { height: 50px; width: auto; }
-        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
-        nav ul li { margin-left: 25px; }
-        nav ul li a { text-decoration: none; color: #1d3557; font-weight: 600; font-size: 15px; }
-        .nav-sns a { margin-left: 15px; }
-        .nav-sns img { width: 20px; vertical-align: middle; }
-
-        /* 記事コンテンツ */
-        .article-container { max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.9; }
-        .article-header { border-bottom: 2px solid #ddd; padding-bottom: 15px; margin-bottom: 35px; }
-        .article-title { font-size: 28px; color: #1d3557; margin-top: 0; font-weight: 700; line-height: 1.4; }
-        .article-meta { font-size: 14px; color: #6c757d; margin-top: 10px; }
+        /* 強調ボックス：デザイン崩れ修正済 */
+        .emphasis-box { 
+            background-color: #f1f4f9; 
+            border-left: 5px solid #e63946; 
+            padding: 25px 30px; 
+            margin: 30px 0; 
+            border-radius: 4px; 
+        }
         
-        h2 { font-size: 24px; color: #457b9d; margin-top: 50px; padding-bottom: 8px; border-bottom: 1px dashed #ced4da; font-weight: 600; }
-        h3 { font-size: 20px; color: #1d3557; margin-top: 30px; font-weight: 600; }
-        
-        .emphasis-box { background-color: #f1f4f9; border-left: 5px solid #e63946; padding: 25px 30px; margin: 35px 0; border-radius: 4px; }
-        
-        .ota-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 15px; background: #fff; }
-        .ota-table th, .ota-table td { border: 1px solid #dee2e6; padding: 15px; text-align: left; }
+        .ota-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+        .ota-table th, .ota-table td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
         .ota-table th { background-color: #1d3557; color: white; }
         
-        /* コンバージョンエリア */
-        .cv-area { background: #1d3557; color: white; padding: 50px 40px; border-radius: 8px; text-align: center; margin-top: 60px; }
-        .cv-button { display: inline-block; background: #e63946; color: white; padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 25px; transition: 0.3s; font-size: 18px; }
-        .cv-button:hover { background: #c12e3a; transform: translateY(-2px); }
+        /* CVエリア */
+        .cv-area { background: #1d3557; color: white; padding: 40px; border-radius: 8px; text-align: center; margin-top: 50px; }
+        .cv-button { display: inline-block; background: #e63946; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .cv-button:hover { background: #c12e3a; }
 
-        /* フッター */
-        footer { background: #1d3557; color: white; padding: 30px 5%; text-align: center; margin-top: 80px; font-size: 14px; }
-        
+        .internal-links {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f1f4f9;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        .internal-links a {
+            display: block;
+            color: #457b9d;
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .internal-links a:hover { text-decoration: underline; }
+
         @media (max-width: 768px) {
-            header { flex-direction: column; padding: 15px; }
-            nav ul { margin-top: 15px; }
-            nav ul li { margin: 0 10px; }
-            .article-title { font-size: 22px; }
+            .article-title { font-size: 26px; }
+            .ota-table { font-size: 13px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">
-        <a href="index.html"><img src="Logo M.jpg" alt="マーケティング日本"></a>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html#services">SERVICES</a></li>
-            <li><a href="blog.html">BLOG</a></li>
-            <li><a href="index.html#contact">CONTACT</a></li>
-            <li class="nav-sns">
-                <a href="#"><img src="RED-logo.png" alt="RED"></a>
-                <a href="#"><img src="WeChat-logo.png" alt="WeChat"></a>
-            </li>
-        </ul>
-    </nav>
+<div class="logo">
+    <a href="index.html">
+        <img src="MN Loggo.png" alt="マーケティングニッポンのロゴ">
+    </a>
+</div>
+<button class="menu-toggle" aria-controls="main-nav" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</button>
+<nav>
+    <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li>
+            <a href="#">サービス</a>
+            <ul class="dropdown">
+                <li><a href="trades.html">旅行会社コネクション</a></li>
+                <li><a href="media.html">SNSマーケティング支援</a></li>
+                <li><a href="pr.html">PRキャンペーン</a></li>
+            </ul>
+        </li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="https://forms.office.com/r/vnJWyKpeku" class="button-nav">お問い合わせ</a></li>
+    </ul>
+</nav>
 </header>
 
 <main>
@@ -112,7 +160,7 @@
                 自社で中国市場に精通した優秀な人材を雇い、現地拠点を維持し、パイプをゼロから構築・維持し続けるコストを想像してみてください。
             </p>
             <p>
-                私たちのコンサルティング・代行サービスは、短期的な広告運用ではありません。御館の「外部営業部」として機能し、失敗のリスクを排除しながら、最短ルートで「中国市場の収益基盤」を構築・維持します。これは、現代において極めて合理的な経営判断です。
+                私たちのコンサルティング・代行サービスは、短期的な広告運用ではありません。御館の「外部営業部」として機能し、失敗のリスクを排除しながら、最短ルートで「中国市場の収益基盤」を構築・維持します。これは、変化の激しい現代において極めて合理的な経営判断です。
             </p>
 
             <table class="ota-table">
@@ -120,24 +168,24 @@
                     <tr>
                         <th>比較項目</th>
                         <th>一般的なSNS代行</th>
-                        <th>マーケティング日本（ハイブリッド）</th>
+                        <th>マーケティング日本（ハイブリッド戦略）</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>目的</strong></td>
                         <td>「投稿すること」がゴール</td>
-                        <td><strong>「収益構造を再構築すること」</strong></td>
+                        <td><strong>「収益構造を再構築すること」</strong>がゴール</td>
                     </tr>
                     <tr>
                         <td><strong>手法</strong></td>
                         <td>翻訳と定型投稿のみ</td>
-                        <td><strong>RED運用 ＋ 現地への直接営業</strong></td>
+                        <td><strong>RED運用 ＋ 現地旅行会社への直接営業</strong></td>
                     </tr>
                     <tr>
                         <td><strong>耐性</strong></td>
-                        <td>情勢が変われば効果がゼロ</td>
-                        <td><strong>逆境でも送客を維持するパイプ</strong></td>
+                        <td>情勢が変われば効果がゼロになる</td>
+                        <td><strong>「沈＆林」のパイプにより、逆境でも送客を維持</strong></td>
                     </tr>
                 </tbody>
             </table>
@@ -149,23 +197,47 @@
 
         <div class="cv-area">
             <h3>その「一歩」が、1年後の収益を左右します</h3>
-            <p>私たちは、流行を追うだけの代理店ではありません。<br>貴館の「外部の中国営業部」として、覚悟を持って並走します。</p>
-            <p><strong>【毎月3社限定】共同代表（沈・林）による無料戦略診断</strong></p>
+            <p>
+                私たちは、流行を追うだけの代理店ではありません。貴館の「外部の中国営業部」として、覚悟を持って並走します。
+            </p>
+            <p><strong>【毎月3社限定】共同代表による無料戦略診断</strong></p>
             <a href="https://forms.office.com/r/vnJWyKpeku" class="cv-button">沈と林に直接相談する</a>
         </div>
 
-        <div class="internal-links" style="margin-top:40px; padding:20px; background:#f1f4f9; border-radius:8px;">
+        <div class="internal-links">
             <strong>【あわせて読みたい：現場の真実】</strong>
-            <a href="blog-red-kol-ugc.html" style="display:block; color:#457b9d; text-decoration:none; margin-bottom:8px;">・RED（小紅書）から予約へ：最新のUGC活用術</a>
-            <a href="blog-tier1-tier2-cities.html" style="display:block; color:#457b9d; text-decoration:none; margin-bottom:8px;">・なぜ「中国語話者」だけでは集客できないのか？</a>
+            <a href="blog-red-kol-ugc.html">・RED（小紅書）から予約へ：最新のUGC活用術</a>
+            <a href="blog-tier1-tier2-cities.html">・なぜ「中国語話者」だけでは集客できないのか？</a>
+            <a href="blog-whichota.html">・【2026最新】中国OTA比較：景気後退期に「高単価客」を掴む戦略</a>
         </div>
 
     </div>
 </main>
 
 <footer>
-    <p>&copy; 2025 Marketing Nippon All Rights Reserved.</p>
+<div class="footer-content">
+    <div class="footer-item">
+        <h3>マーケティング日本</h3>
+        <p>
+            Marketing Nippon<br>
+            中国オフィス & 日本オフィス<br>
+            共同代表：沈＆林
+        </p>
+    </div>
+    <div class="footer-item">
+        <h3>連絡先</h3>
+        <p>
+            <a href="https://marketingnippon.com">www.marketingnippon.com</a><br>
+            <a href="mailto:info@marketingnippon.com">info@marketingnippon.com</a>
+        </p>
+    </div>
+    <div class="footer-item">
+        <h3>営業時間</h3>
+        <p>Monday—Friday<br>9am—5pm</p>
+    </div>
+</div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
